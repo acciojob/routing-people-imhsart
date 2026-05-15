@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 const UserList = () => {
   const [userData, setUserData] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
   useEffect(() => {
     getData()
   }, [])
@@ -14,18 +13,7 @@ const UserList = () => {
       setUserData(data)
     }catch(err){
       console.log(err)
-    }finally{
-      setIsLoading(false)
     }
-  }
-
-  if(isLoading){
-    return (
-      <div>
-        <h1>User List</h1>
-        <div>Loading...</div>
-      </div>
-    )
   }
   return (
     <div>

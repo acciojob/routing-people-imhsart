@@ -17,10 +17,12 @@ const UserDetails = () => {
     try{
       let response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
       let data = await response.json()
-      setCurrUserData(data)
+      setTimeout(() => {
+        setCurrUserData(data)
+        setIsLoading(false)
+      }, 1000)
     }catch(error){
       console.log(error)
-    }finally{
       setIsLoading(false)
     }
   }
