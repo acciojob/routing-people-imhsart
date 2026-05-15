@@ -3,13 +3,15 @@ import React, {useState, useEffect} from "react";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 const UserDetails = () => {
-  const [currUserData, setCurrUserData] = useState({})
+  const [currUserData, setCurrUserData] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
   const {id} = useParams()
 
   useEffect(() => {
+    setIsLoading(true)
+    setCurrUserData(null)
     getDetails()
-  }, [])
+  }, [id])
 
   async function getDetails(){
     try{

@@ -19,11 +19,17 @@ const UserList = () => {
     }
   }
 
+  if(isLoading){
+    return (
+      <div>
+        <h1>User List</h1>
+        <div>Loading...</div>
+      </div>
+    )
+  }
   return (
     <div>
       <h1>User List</h1>
-      {
-        isLoading ? <div>Loading...</div> : (
           <ul>
             {
               userData.map(item => {
@@ -31,8 +37,6 @@ const UserList = () => {
               })
             }
           </ul>
-        )
-      }
     </div>
   )
 }
