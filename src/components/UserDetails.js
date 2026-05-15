@@ -24,7 +24,7 @@ const UserDetails = () => {
     }
   }
   return (
-    <div>
+    <>
    {
     isLoading ? <div>Loading...</div> : (
       <div>
@@ -37,7 +37,7 @@ const UserDetails = () => {
       </div>
     )
    }
-   </div>
+   </>
   )
 }
 export default UserDetails
