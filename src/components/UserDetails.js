@@ -26,7 +26,7 @@ const UserDetails = () => {
   return (
     <div>
    {
-    isLoading ? <p>Loading...</p> : (
+    isLoading ? <div>Loading...</div> : (
       <div>
         <h1>User Details</h1>
         <p><strong>Name:</strong> {currUserData.name}</p>
