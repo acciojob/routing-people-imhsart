@@ -22,10 +22,11 @@ const UserDetails = () => {
       setIsLoading(false)
     }
   }
+
+  if(isLoading){
+    return <div>Loading...</div>
+  }
   return (
-    <>
-   {
-    isLoading ? <div>Loading...</div> : (
       <div>
         <h1>User Details</h1>
         <p><strong>Name:</strong> {currUserData.name}</p>
@@ -34,9 +35,6 @@ const UserDetails = () => {
         <p><strong>Phone:</strong> {currUserData.phone}</p>
         <p><strong>Website:</strong> {currUserData.website}</p>
       </div>
-    )
-   }
-   </>
   )
 }
 export default UserDetails
