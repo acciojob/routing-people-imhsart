@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 const UserDetails = () => {
   const [currUserData, setCurrUserData] = useState({})
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   const {id} = useParams()
 
   useEffect(() => {
@@ -12,7 +12,6 @@ const UserDetails = () => {
   }, [])
 
   async function getDetails(){
-    setIsLoading(true)
     try{
       let response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
       let data = await response.json()
